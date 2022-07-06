@@ -1,0 +1,8 @@
+*.DS_Store
+*.pdf
+*.o
+*.a
+*.out
+*.gch
+.idea/
+.vscode/
