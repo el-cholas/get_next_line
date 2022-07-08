@@ -5,7 +5,7 @@
 # include <fcntl.h>
 /* for malloc and all that */
 # include <stdlib.h>
-/* for write() - I will probably need to remove this for moulinnete */
+/* for write() and read() */
 #include <unistd.h>
 /* REMOVE THIS BOI */
 #include <stdio.h>

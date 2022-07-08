@@ -7,8 +7,10 @@ int main(void)
 
 	file = "bee_movie.txt";
 	fd = open(file, O_RDONLY);
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
+	printf("line 1: %s\n", get_next_line(fd));
+	printf("line 2: %s\n", get_next_line(fd));
+	//get_next_line(fd);
+	//get_next_line(fd);
 	close(fd);
 	return (0);
 }
