@@ -44,3 +44,19 @@ void	*ft_memcpy(void *dest_any, const void *src_any, size_t size)
 	}
 	return (dest_any);
 }
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t	len;
+
+	len = ft_strlen(src);
+	if (!size)
+		return (len);
+	while (*src && size - 1)
+	{
+		*dst++ = *src++;
+		size--;
+	}
+	*dst = '\0';
+	return (len);
+}
