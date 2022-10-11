@@ -5,6 +5,7 @@
  * 1 = True
  */
 
+/*
 void	test()
 {
 	char	*buf;
@@ -16,7 +17,8 @@ void	test()
 	else
 		printf("True");
 }
-
+*/
+/*
 static char	*read_line(int fd)
 {
 	static int	i = 0;
@@ -28,6 +30,7 @@ static char	*read_line(int fd)
 	//if (!buf)
 	//buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
 	//*/
+/*
 	if (!buf)
 	{
 		while (buf[i] != '\n' || buf[i])
@@ -41,12 +44,37 @@ static char	*read_line(int fd)
 		i++;
 	return (str);
 }
+*/
+
+/*
+ * read_boy() reads the file descriptor until it finds a new line
+ */
+
+char	*read_boy(int fd, char *line)
+{
+	char	*buf;
+
+	buf = malloc(sizeof(char) * BUFFER_SIZE + 1);
+	if (!buf)
+		return (NULL);
+	if (read(fd, line, BUFFER_SIZE) == -1)
+	{
+		free(buf);
+		return (NULL);
+	}
+	if (!ft_strchr(buf), '\n')
+		return (read_boy(fd, ft_strjoin(buf, line)));
+	return (ft_strjoin(buf, line))
+}
 
 char	*get_next_line(int fd)
 {
+	char	*line;
 	//static	int line = 0;
-	if (fd == -1 || BUFFER_SIZE < 1)
+	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
-	test();
-	return (read_line(fd));
+	line = read_boy(fd, line);
+	if (!line)
+		return (NULL);
+	return (line);
 }
