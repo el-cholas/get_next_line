@@ -55,9 +55,10 @@ char	*read_boy(int fd, char *line)
 	char	*buf;
 
 	buf = malloc(sizeof(char) * BUFFER_SIZE + 1);
+	printf("line so far: %s\n", line);
 	if (!buf)
 		return (NULL);
-	if (read(fd, line, BUFFER_SIZE) == -1)
+	if (!read(fd, line, BUFFER_SIZE))
 	{
 		free(buf);
 		return (NULL);
