@@ -62,9 +62,9 @@ char	*read_boy(int fd, char *line)
 		free(buf);
 		return (NULL);
 	}
-	if (!ft_strchr(buf), '\n')
+	if (!ft_strchr(buf, '\n'))
 		return (read_boy(fd, ft_strjoin(buf, line)));
-	return (ft_strjoin(buf, line))
+	return (ft_strjoin(buf, line));
 }
 
 char	*get_next_line(int fd)
@@ -73,6 +73,7 @@ char	*get_next_line(int fd)
 	//static	int line = 0;
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
+	line = NULL;
 	line = read_boy(fd, line);
 	if (!line)
 		return (NULL);
