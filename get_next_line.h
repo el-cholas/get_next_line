@@ -13,7 +13,6 @@
 /* define the buffer */
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 2
-# endif
 
 /* get_next_line.c */
 char	*get_next_line(int fd);
