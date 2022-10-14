@@ -50,6 +50,7 @@ static char	*read_line(int fd)
  * read_boy() reads the file descriptor until it finds a new line
  */
 
+
 char	*read_boy(int fd, char *line)
 {
 	char	*buf;
@@ -63,6 +64,7 @@ char	*read_boy(int fd, char *line)
 		free(buf);
 		return (NULL);
 	}
+	read();
 	if (!ft_strchr(buf, '\n'))
 		return (read_boy(fd, ft_strjoin(buf, line)));
 	return (ft_strjoin(buf, line));
